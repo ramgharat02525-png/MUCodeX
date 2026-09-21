@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f5f6fa;
+  --surface: #ffffff;
+  --surface-2: #f0f2f8;
+  --border: #e3e6ef;
+  --text: #0f1424;
+  --text-muted: #636b82;
+  --primary: #131c3f;
+  --primary-foreground: #ffffff;
+  --accent-blue: #2b62f0;
+  --accent-blue-soft: #e8eefd;
+  --accent-gold: #ee9d1f;
+  --accent-gold-soft: #fdf2df;
+  --success: #178a4c;
+  --success-soft: #e4f6ec;
+  --warning: #b7690a;
+  --warning-soft: #fdf0dd;
+  --error: #c22a2a;
+  --error-soft: #fbe8e8;
+  --ai: #7047d6;
+  --ai-soft: #f0eafb;
+  --shadow-color: 222 47% 20%;
+}
+
+.dark {
+  --bg: #0a0e1c;
+  --surface: #121629;
+  --surface-2: #171c33;
+  --border: #262c48;
+  --text: #edeff7;
+  --text-muted: #929ac0;
+  --primary: #2b62f0;
+  --primary-foreground: #ffffff;
+  --accent-blue: #5b8bff;
+  --accent-blue-soft: #182241;
+  --accent-gold: #f3ac3d;
+  --accent-gold-soft: #2c2110;
+  --success: #37c073;
+  --success-soft: #0f2a1c;
+  --warning: #e2973c;
+  --warning-soft: #2c2010;
+  --error: #ef5a5a;
+  --error-soft: #2d1414;
+  --ai: #9c7cf0;
+  --ai-soft: #201a3a;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-blue-soft: var(--accent-blue-soft);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-gold-soft: var(--accent-gold-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-error: var(--error);
+  --color-error-soft: var(--error-soft);
+  --color-ai: var(--ai);
+  --color-ai-soft: var(--ai-soft);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+::selection {
+  background: var(--accent-blue);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.card-shadow {
+  box-shadow: 0 1px 2px rgba(15, 20, 36, 0.04), 0 8px 24px -12px rgba(15, 20, 36, 0.12);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.35s ease-out both;
+}
